@@ -1,4 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
+import { Provider } from '@tarojs/mobx'
+import todoStore from './store/todo'
+
 import Index from './pages/index'
 
 import './app.scss'
@@ -9,33 +12,36 @@ import './app.scss'
 //   require('nerv-devtools')
 // }
 
+const store = {
+  todoStore,
+}
+
 class App extends Component {
+  componentDidMount() {}
 
-  componentDidMount () {}
+  componentDidShow() {}
 
-  componentDidShow () {}
+  componentDidHide() {}
 
-  componentDidHide () {}
-
-  componentDidCatchError () {}
+  componentDidCatchError() {}
 
   config = {
-    pages: [
-      'pages/index/index'
-    ],
+    pages: ['pages/index/index'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
-    }
+      navigationBarTextStyle: 'black',
+    },
   }
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render () {
+  render() {
     return (
-      <Index />
+      <Provider store={store}>
+        <Index />
+      </Provider>
     )
   }
 }
