@@ -1,8 +1,9 @@
 import Taro, { Component } from '@tarojs/taro'
-import { Provider } from '@tarojs/mobx'
-import todoStore from './store/todo'
+import { Provider } from '@tarojs/redux'
+// import todoStore from './store/todo'
+import configStore from './store'
 
-import Index from './pages/index'
+import Index from './pages/index2'
 
 import './app.scss'
 
@@ -12,21 +13,23 @@ import './app.scss'
 //   require('nerv-devtools')
 // }
 
-const store = {
-  todoStore,
-}
+// const store = {
+//   todoStore,
+// }
+
+const store = configStore()
 
 class App extends Component {
-  componentDidMount() {}
+  componentDidMount () { }
 
-  componentDidShow() {}
+  componentDidShow () { }
 
-  componentDidHide() {}
+  componentDidHide () { }
 
-  componentDidCatchError() {}
+  componentDidCatchError () { }
 
   config = {
-    pages: ['pages/index/index'],
+    pages: ['pages/index2/index', 'pages/index3/index'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
@@ -37,7 +40,7 @@ class App extends Component {
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render() {
+  render () {
     return (
       <Provider store={store}>
         <Index />

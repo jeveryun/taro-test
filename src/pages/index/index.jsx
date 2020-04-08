@@ -5,38 +5,38 @@ import { observer, inject } from '@tarojs/mobx'
 
 import './index.scss'
 
-@inject('todoStore')
-@observer
+// @inject('todoStore')
+// @observer
 export default class Index extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      val: '',
+      val: ''
     }
   }
-  componentWillMount() {}
+  componentWillMount () { }
 
-  componentDidMount() {}
+  componentDidMount () { }
 
-  componentWillUnmount() {}
+  componentWillUnmount () { }
 
-  componentDidShow() {}
+  componentDidShow () { }
 
-  componentDidHide() {}
+  componentDidHide () { }
 
   config = {
-    navigationBarTitleText: 'Todolist',
+    navigationBarTitleText: 'Todolist'
   }
 
   handleInput = val => {
     this.setState({
-      val,
+      val
     })
   }
   handleClick = () => {
     this.props.todoStore.addTodo(this.state.val)
     this.setState({
-      val: '',
+      val: ''
     })
     // this.setState({
     //   todos: [...this.state.todos, this.state.val],
@@ -47,19 +47,29 @@ export default class Index extends Component {
     this.props.todoStore.removeTodo(index)
   }
 
-  render() {
+  goto = () => {
+    Taro.navigateTo({
+      url: '/pages/index2/index?sd=1'
+    })
+  }
+  render () {
     const { todos } = this.props.todoStore
     return (
-      <View className="index">
+      <View className='index'>
         <Text>Todo List</Text>
-        <View className="at-icon at-icon-bullet-list"></View>
+        <View className='at-icon at-icon-bullet-list'></View>
         <AtInput value={this.state.val} onChange={this.handleInput}></AtInput>
-        <AtButton type="primary" onClick={this.handleClick}>
+        <AtButton type='primary' onClick={this.handleClick}>
           123
         </AtButton>
         <AtList>
           {todos.map((item, index) => (
-            <AtListItem key={item} title={index + ':' + item} isSwitch onSwitchChange={() => this.handleChange(index)}></AtListItem>
+            <AtListItem
+              key={item}
+              title={index + ':' + item}
+              isSwitch
+              onSwitchChange={() => this.handleChange(index)}
+            ></AtListItem>
           ))}
         </AtList>
       </View>
