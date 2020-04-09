@@ -31,8 +31,9 @@ class App extends Component {
 
   config = {
     pages: [
-      "pages/home/index",
-      "pages/index2/index"
+      'pages/home/index',
+      'pages/search/index',
+      'pages/index2/index'
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -46,20 +47,20 @@ class App extends Component {
         {
           pagePath: 'pages/home/index',
           text: '首页',
-          iconPath: "./assets/tab_home.png",
-          selectedIconPath: "./assets/tab_home_f.png"
+          iconPath: './assets/tab_home.png',
+          selectedIconPath: './assets/tab_home_f.png'
         },
         {
-          pagePath: "pages/index2/index",
-          text: "测试",
-          iconPath: "./assets/tab_me.png",
-          selectedIconPath: "./assets/tab_me_f.png"
+          pagePath: 'pages/index2/index',
+          text: '测试',
+          iconPath: './assets/tab_me.png',
+          selectedIconPath: './assets/tab_me_f.png'
         }
       ],
-      color: "#a6a6a6",
-      selectedColor: "#78a4fa",
-      backgroundColor: "#ffffff",
-      borderStyle: "black"
+      color: '#a6a6a6',
+      selectedColor: '#78a4fa',
+      backgroundColor: '#ffffff',
+      borderStyle: 'black'
     }
   }
 
