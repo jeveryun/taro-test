@@ -28,14 +28,14 @@ export default class Home extends Component {
     recommendBooks: PropTypes.arrayOf(PropTypes),
   }
 
-  constructor() {
-    super(...arguments)
+  constructor(props) {
+    super(props)
   }
 
   componentDidMount() {
     this.props.dispatchGetNewBooks()
-    this.props.dispatchGetHotBooks()
-    this.props.dispatchGetRecommendBooks()
+    // this.props.dispatchGetHotBooks()
+    // this.props.dispatchGetRecommendBooks()
   }
 
   onClickSearchBar = () => {

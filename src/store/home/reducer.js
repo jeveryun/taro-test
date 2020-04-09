@@ -1,4 +1,4 @@
-import * as HOME from "./action-type"
+import * as HOME from "./action-type";
 
 const defaultState = {
   /**
@@ -31,40 +31,40 @@ const defaultState = {
   newBooks: [],
   hotBooks: [],
   recommendBooks: []
-}
+};
 
 const home = (state = defaultState, action) => {
   switch (action.type) {
     case HOME.GET_NEW_BOOK:
-      return { ...state, newBooks: state.newBooks.concat(action.books) }
+      return { ...state, newBooks: state.newBooks.concat(action.books) };
     case HOME.GET_HOT_BOOK:
-      return { ...state, hotBooks: state.hotBooks.concat(action.books) }
+      return { ...state, hotBooks: state.hotBooks.concat(action.books) };
     case HOME.GET_RECOMMEND_BOOK:
       return {
         ...state,
         recommendBooks: state.recommendBooks.concat(action.books)
-      }
+      };
     case HOME.DISFAVOR:
       switch (action.bookType) {
         case "new":
           return {
             ...state,
             newBooks: state.newBooks.filter(i => i.id != action.id)
-          }
+          };
         case "hot":
           return {
             ...state,
             hotBooks: state.hotBooks.filter(i => i.id != action.id)
-          }
+          };
         case "recommend":
           return {
             ...state,
             recommendBooks: state.recommendBooks.filter(i => i.id != action.id)
-          }
+          };
       }
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default home
+export default home;
