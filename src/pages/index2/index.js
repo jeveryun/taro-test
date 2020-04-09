@@ -5,13 +5,13 @@ import { bindActionCreators } from 'redux'
 import A from '../../components/A/A'
 import B from '../../components/B/B'
 
-import * as Actions from '../../store/actions/counter'
+import * as Actions from '../../store/counter/action'
 
 import './index.scss'
 
 function mapStateToProps (state) {
   return {
-    counter: state.counter.toJS()
+    counter: state.counter
   }
 }
 function mapDispatchToProps (dispatch) {

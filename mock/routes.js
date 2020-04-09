@@ -10,6 +10,7 @@ Object.keys(db).map(key => {
   key = "/" + key;
   routes[newKey] = key; // '/a-b' => '/a/b'
   routes[newKey + "/:id"] = key + "/:id"; // '/a-b/:id' => '/a/b/:id'
+  console.log(routes);
 });
 
 module.exports = routes

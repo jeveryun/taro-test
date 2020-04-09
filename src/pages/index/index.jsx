@@ -59,9 +59,9 @@ export default class Index extends Component {
         <Text>Todo List</Text>
         <View className='at-icon at-icon-bullet-list'></View>
         <AtInput value={this.state.val} onChange={this.handleInput}></AtInput>
-        <AtButton type='primary' onClick={this.handleClick}>
+        {/* <AtButton type='primary' onClick={this.handleClick}>
           123
-        </AtButton>
+        </AtButton> */}
         <AtList>
           {todos.map((item, index) => (
             <AtListItem
